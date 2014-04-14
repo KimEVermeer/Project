@@ -1,18 +1,18 @@
 $(function() {
 	var output = "";
 
-	$('.language-dropdown').each(function(){
+	$(".language-dropdown").each(function(){
 		$(this).click(function(e){
 			e.stopPropagation();
-			$(this).toggleClass('active');
+			$(this).toggleClass("active");
 		});
 	});  
 
-	$('body').on("click", function(){
-		$('.language-dropdown').removeClass('active');
+	$("body").on("click", function(){
+		$(".language-dropdown").removeClass("active");
 	});
 
-	$('textarea.input-area').keydown(function(e) {
+	$("textarea.input-area").keydown(function(e) {
 		if(e.keyCode === 9) {
 			var start = this.selectionStart;
 			var end = this.selectionEnd;
@@ -28,16 +28,15 @@ $(function() {
 			console.log(value);
 			// var output = output + value;
 			e.preventDefault();
-			$('div.output-area').html(output);
+			$("div.output-area").html(output);
 		}
+		if(e.which == 13) {
+        	
+    	}
 	});
 
-	$('textarea.input-area').keyup(function(event) {
+	$("textarea.input-area").keyup(function(event) {
 		output = $(this).val();
-		//var split = val.split("\n");
-		output = output.replace(/\r?\n/g, '<br/>');
-		output = output.replace(/\t/g, "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
-
-		$('div.output-area').html(output);
+		$("div.output-area").html("<xmp>"+output+"</xmp>");
 	});
 });

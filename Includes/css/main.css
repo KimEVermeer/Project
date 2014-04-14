@@ -61,6 +61,7 @@ header .nav-main {
 	padding: 10px;
 	overflow-x: hidden;
 	overflow-y: scroll;
+	word-wrap: break-word;
 }
 
 .translation-wrapper .output .output-area{
@@ -169,6 +170,7 @@ header .nav-main {
 	background: #fff;
 	display: block;
 	width: 100%;
+	border-radius: 0px !important;
 }
 
 .translation-wrapper ul.language-select li.language-dropdown ul.language-menu li:hover {
