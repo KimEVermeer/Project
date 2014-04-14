@@ -1,4 +1,7 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic);
+
 body {
+	font-family: 'Roboto', Arial, sans-serif, Verdana;
 	margin: 0px;
 	background: #fff;
 }
@@ -33,27 +36,141 @@ header .nav-main {
 	color: #df4b39;
 	border-bottom: 1px solid #dadada;
 	padding: 0px 5% 20px 5%;
+	margin-bottom: 0px;
 }
 
 .content-wrapper .translation-wrapper {
-	margin: 40px 5%;
+	margin: 10px 5%;
 }
 
 .translation-wrapper .input,
 .translation-wrapper .output {
-	width: 45%;
-	height: 250px
+	width: 48%;
+	height: 450px
 }
 
-.translation-wrapper .input { float: left; }
+.translation-wrapper .input { float: left; height: 470px; }
 .translation-wrapper .output { float: right; }
 
 .translation-wrapper .input .input-area, .translation-wrapper .output .output-area {
 	width: 100%;
 	height: 100%;
 	border-color: #dadada;
+	font-family: "Courier New", Courier, monospace;
+	font-size: 14px;
+	padding: 10px;
+	overflow-x: hidden;
+	overflow-y: scroll;
 }
 
 .translation-wrapper .output .output-area{
-	background-color: #f5f5f5;
+	color: #fff;
+	background-color: #000;
+}
+
+.translation-wrapper .input .input-area {
+	-webkit-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-ms-transition: all 0.5s ease-in-out;
+	-kthtml-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+}
+
+.translation-wrapper .input .input-area:hover {
+	box-shadow: inset 1px 1px 4px rgba(0,0,0,.2);
+	-webkit-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-ms-transition: all 0.5s ease-in-out;
+	-kthtml-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+}
+
+.translation-wrapper .input .input-area:focus {
+	outline-color: rgb(77, 144, 254);
+}
+
+.translation-wrapper ul.language-select {
+	padding: 0px;
+	margin-bottom: 70px;
+}
+
+.translation-wrapper ul.language-select li { 
+	float: left;
+	display: inline;
+	padding: 5px 10px;
+	margin: 0px;
+	height: 25px;
+	line-height: 25px;
+	border: 1px solid rgba(0,0,0,.1);
+
+	background: #f5f5f5; /* Old browsers */
+	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Y1ZjVmNSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmMWYxZjEiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-linear-gradient(top,  #f5f5f5 0%, #f1f1f1 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f5f5f5), color-stop(100%,#f1f1f1)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #f5f5f5 0%,#f1f1f1 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #f5f5f5 0%,#f1f1f1 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #f5f5f5 0%,#f1f1f1 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #f5f5f5 0%,#f1f1f1 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5f5f5', endColorstr='#f1f1f1',GradientType=0 ); /* IE6-8 */
+}
+
+.translation-wrapper ul.language-select li:hover,
+.translation-wrapper ul.language-select li.active {
+	background: #ededed; /* Old browsers */
+	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2VkZWRlZCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlMGUwZTAiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-linear-gradient(top,  #ededed 0%, #e0e0e0 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ededed), color-stop(100%,#e0e0e0)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #ededed 0%,#e0e0e0 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #ededed 0%,#e0e0e0 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #ededed 0%,#e0e0e0 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #ededed 0%,#e0e0e0 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', endColorstr='#e0e0e0',GradientType=0 ); /* IE6-8 */
+}
+
+.translation-wrapper ul.language-select li:hover {
+	cursor: pointer;
+}
+
+.translation-wrapper ul.language-select li:first-child {
+	border-top-left-radius: 3px;
+	border-bottom-left-radius: 3px;
+}
+.translation-wrapper ul.language-select li.language-dropdown { position: relative; width: 5px;}
+.translation-wrapper ul.language-select li.language-dropdown i {
+	display: block;
+	border-color: #777 transparent;
+	border-style: solid;
+	border-width: 4px 4px 0 4px;
+	height: 0;
+	width: 0;
+	position: absolute;
+	right: 8px;
+	top: 15px;
+}
+
+.translation-wrapper ul.language-select li.language-dropdown ul.language-menu { 
+	display: none;
+	width: 200px; 
+	position: absolute; 
+	padding-left: 0px;
+	top: 35px;
+	left: -2px;
+}
+
+.translation-wrapper ul.language-select li.language-dropdown.active ul.language-menu {
+	display: block;
+}
+
+.translation-wrapper ul.language-select li.language-dropdown ul.language-menu li {
+	background: #fff;
+	display: block;
+	width: 100%;
+}
+
+.translation-wrapper ul.language-select li.language-dropdown ul.language-menu li:hover {
+	background: #f8f8f8;
 }

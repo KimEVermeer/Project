@@ -1,8 +1,11 @@
-<!DOCTYPE html>
 <html>
+<!--[if IE8]> <html class="ie8"> <![endif]-->
 <head>
 <link rel="stylesheet" type="text/css" href="includes/css/main.css">
 <link rel="shortcut icon" href="includes/img/favicon.ico" type="image/x-icon" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+<script type="text/JavaScript" src="includes/javascript/main-helper.js"></script> 
 <title>Transcode</title>
 </head>
 
@@ -18,9 +21,30 @@
 
 		<div class="translation-wrapper">
 			<div class="input">
+				<ul class="language-select">
+					<li>C#</li>
+					<li>Java</li>
+					<li>Detect</li>
+					<li class="language-dropdown"><i class="icon-dropdown"></i>
+						<ul class="language-menu">
+							<li>ColdFusion</li>
+							<li>Python</li>
+						</ul>
+					</li>
+				</ul>
 				<textarea class="input-area"></textarea>
 			</div>
 			<div class="output">
+				<ul class="language-select">
+					<li>C#</li>
+					<li>Java</li>
+					<li class="language-dropdown"><i class="icon-dropdown"></i>
+						<ul class="language-menu">
+							<li>ColdFusion</li>
+							<li>Python</li>
+						</ul>
+					</li>
+				</ul>
 				<div class="output-area">
 				</div>
 			</div>
