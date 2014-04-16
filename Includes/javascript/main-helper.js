@@ -25,8 +25,6 @@ $(function() {
 						+ value.substring(end));
 			this.selectionStart = this.selectionEnd = start + 1;
 
-			console.log(value);
-			// var output = output + value;
 			e.preventDefault();
 			$("div.output-area").html(output);
 		}
