@@ -9,34 +9,38 @@ var connection = mysql.createConnection({
 });
 
 var server = http.createServer(function(req, res) {
-    connection.connect();
 
-    var returnValue = {};
+    var returnValue = [];
 
     var getNames = function(callBack)
     {
-        connection.query('SELECT id AS identiteit, name AS names FROM language', function (err, rows, fields) {
-            if (err) throw err;
+      connection.query('SELECT id AS identiteit, name AS names FROM language', function (err, rows, fields) {
+        if (err) throw err;
 
-            // module.exports='The name is: ', rows[0].names;
-            for(var i = 0; i<=1; i++)
-            {
-              returnValue.identiteit = rows[i].identiteit;
-              returnValue.names = rows[i].names;
-            }
+        for(var i = 0; i<rows.length; i++)
+        {
+          returnValue.push({
+            id : rows[i].identiteit,
+            name : rows[i].names
+          });
+        }
 
-            // Console.log(returnValue);
-
-            callBack();
-        });
+        callBack();
+      });
     }
 
     var getOptions = function(callBack)
     {
-      connection.query('SELECT name AS optie FROM options', function (err, rows, fields) {
+      connection.query('SELECT id AS idnr, name AS optie FROM options', function (err, rows, fields) {
           if(err) throw err;
 
-          returnValue.identiteit = rows[0].optie;
+          for(var i = 0; i < rows.length; i++)
+          {
+            returnValue.push({
+              id : rows[i].idnr,
+              optie : rows[i].optie
+            });
+          }
 
           callBack();
       });
@@ -44,9 +48,8 @@ var server = http.createServer(function(req, res) {
     /**
      * Always end the request using this function.
      */
-    var endCall = function() {
-        connection.end();
 
+    var endCall = function() {
         // Status code is 200 (Ok).
         res.writeHead(200);
 
@@ -54,8 +57,8 @@ var server = http.createServer(function(req, res) {
         res.end(JSON.stringify(returnValue));
     }
 
-    getNames(endCall);
-    // getOptions(endCall);
+    // getNames(endCall);
+    getOptions(endCall);
 });
 server.listen(8080);
 
