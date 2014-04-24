@@ -49,7 +49,7 @@ header .nav-main {
 	height: 450px
 }
 
-.translation-wrapper .input { float: left; height: 470px; }
+.translation-wrapper .input { float: left; }
 .translation-wrapper .output { float: right; }
 
 .translation-wrapper .input .input-area, .translation-wrapper .output .output-area {
@@ -67,6 +67,7 @@ header .nav-main {
 .translation-wrapper .output .output-area{
 	color: #fff;
 	background-color: #000;
+	word-wrap: break-word;
 }
 
 .translation-wrapper .input .input-area {

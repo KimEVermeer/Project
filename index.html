@@ -5,7 +5,6 @@
 <link rel="shortcut icon" href="includes/img/favicon.ico" type="image/x-icon" />
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script type="text/JavaScript" src="includes/javascript/main-helper.js"></script> 
-<script type="text/JavaScript" src="includes/nodejs/dbconnection.js"></script> 
 <title>Transcode</title>
 </head>
 
@@ -13,17 +12,18 @@
 	<header>
 		<div class="nav-main"></div>
 	</header>
+
 	<div class="content-wrapper">
 		<h1 class="content-title">
-			Translate
+			Translate 
 		</h1>
 
 		<div class="translation-wrapper">
 			<div class="input">
 				<ul class="language-select">
-					<li>C#</li>
-					<li>Java</li>
-					<li>Detect</li>
+					<li class="input-lang" id="input-c#">C#</li>
+					<li class="input-lang" id="input-java">Java</li>
+					<!-- <li>Detect</li> -->
 					<li class="language-dropdown"><i class="icon-dropdown"></i>
 						<ul class="language-menu">
 							<li>ColdFusion</li>
@@ -35,12 +35,12 @@
 			</div>
 			<div class="output">
 				<ul class="language-select">
-					<li>C#</li>
-					<li>Java</li>
+					<li class="output-lang" id="output-c#">C#</li>
+					<li class="output-lang" id="output-java">Java</li>
 					<li class="language-dropdown"><i class="icon-dropdown"></i>
 						<ul class="language-menu">
-							<li>ColdFusion</li>
-							<li>Python</li>
+							<li class="output-lang">ColdFusion</li>
+							<li class="output-lang">Python</li>
 						</ul>
 					</li>
 				</ul>

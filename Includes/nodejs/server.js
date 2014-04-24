@@ -12,44 +12,11 @@ var server = http.createServer(function(req, res) {
 
   var returnValue = [];
 
-  /*var getNames = function(callBack)
-  {
-    connection.query('SELECT id AS identiteit, name AS names FROM language', function (err, rows, fields) {
-      if (err) throw err;
-
-      for(var i = 0; i<rows.length; i++)
-      {
-        returnValue.push({
-          id : rows[i].identiteit,
-          name : rows[i].names
-        });
-      }
-
-      callBack();
-    });
-  }
-
-  var getOptions = function(callBack)
-  {
-    connection.query('SELECT id AS idnr, name AS optie FROM options', function (err, rows, fields) {
-        if(err) throw err;
-
-        for(var i = 0; i < rows.length; i++)
-        {
-          returnValue.push({
-            id : rows[i].idnr,
-            optie : rows[i].optie
-          });
-        }
-
-        callBack();
-    });
-  }*/
-
   var getTranslation = function(callBack)
   {
     connection.query('SELECT t.id AS translationid, t.optionId AS optionid, o.name AS optionname, ' +
-                      't.languageid AS languageid, l.name AS languagename, translation AS translation ' +
+                      'o.color AS color, t.languageid AS languageid, l.name AS languagename, '+
+                      'translation AS translation ' +
                       'FROM translation t ' +
                       'INNER JOIN options o ' +
                       'ON t.optionId = o.id ' +
@@ -63,6 +30,7 @@ var server = http.createServer(function(req, res) {
           id         : rows[i].translationid,
           optionid   : rows[i].optionid,
           optionname : rows[i].optionname,
+          color      : rows[i].color,
           languageid : rows[i].languageid,
           language   : rows[i].languagename,
           translation: rows[i].translation
@@ -80,14 +48,17 @@ var server = http.createServer(function(req, res) {
 
   var endCall = function() {
       // Status code is 200 (Ok).
-      res.writeHead(200);
-
+      var headers = {};
+      headers["Access-Control-Allow-Origin"] = "*";
+      headers["Content-Type"] = "application/json";
+      res.writeHead(200, headers);
+      
       // Write the object and end the request.
       res.end(JSON.stringify(returnValue));
   }
 
   getTranslation(endCall);
-  
+
 });
 server.listen(8080);
 

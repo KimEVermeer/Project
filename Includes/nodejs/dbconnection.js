@@ -8,19 +8,14 @@ var connection = mysql.createConnection({
 
 connection.connect();
 
-var returnValue = {};
+// var returnValue = {};
 
 connection.query('SELECT name AS names, id AS idz FROM language', function(err, rows, fields) {
   if (err) throw err;
 
   // module.exports='The name is: ', rows[0].names;
-  for(var i = 0; i<2; i++)
-  {
-      console.log(rows[i].names + " " + rows[i].idz);
-
-  }
-
-  returnValue.names = rows[0].names;
+  console.log(rows[0].names + " " + rows[0].idz);
+  // returnValue.names = rows[0].names;
 
 });
 
